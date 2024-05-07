@@ -3,7 +3,7 @@ sh install-neovim.sh
 
 # install tooling
 sudo apt update
-sudo apt install tmux
+sudo apt install -y tmux
 
 # clone nvim config
 mkdir -p ~/.config/

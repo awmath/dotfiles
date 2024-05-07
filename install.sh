@@ -3,7 +3,7 @@ set -e
 
 # work on script directory
 SCRIPT=$(realpath "$0")
-SCRIPTPATH=$(dirname "$SCRIPT")
+SCRIPT_PATH=$(dirname "$SCRIPT")
 
 # install neovim
 sh $SCRIPT_PATH/install-neovim.sh

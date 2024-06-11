@@ -7,7 +7,7 @@ SCRIPT_PATH=$(dirname "$SCRIPT")
 
 # install tooling
 sudo apt update
-sudo apt install -y tmux ripgrep fd-find
+sudo apt install -y tmux ripgrep fd-find ncurses-term
 
 # setup neovim
 sh $SCRIPT_PATH/setup-neovim.sh

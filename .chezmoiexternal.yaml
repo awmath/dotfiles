@@ -1,0 +1,20 @@
+.oh-my-zsh:
+  type: git-repo
+  url: https://github.com/ohmyzsh/ohmyzsh
+
+.oh-my-zsh/custom/themes/powerlevel10k:
+  type: git-repo
+  url: https://github.com/romkatv/powerlevel10k
+
+.pyenv:
+  type: git-repo
+  url: https://github.com/pyenv/pyenv
+
+.nvm:
+  type: git-repo
+  url: https://github.com/nvm-sh/nvm
+
+.local:
+  type: archive
+  url: https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+  stripComponents: 1

@@ -1,0 +1,7 @@
+packages:
+  all:
+    - tmux
+    - fd-find
+    - ripgrep
+    - git
+    - zsh

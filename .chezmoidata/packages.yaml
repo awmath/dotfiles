@@ -1,0 +1,17 @@
+packages:
+  - mise
+  - tmux
+  - ripgrep
+  - fd-find
+  - bat
+  - zsh
+  - neovim python3-neovim
+  - git
+  - just
+  - jq yq
+  - curl wget rsync
+  - python pipx
+  - nodejs
+  - golang
+  - rust
+  - zsh-completions

@@ -1,0 +1,4 @@
+container_image_default="ghcr.io/awmath/devcontainer:latest"
+container_name_default="devcontainer"
+init_hooks="ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/podman"
+

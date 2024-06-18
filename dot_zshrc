@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git direnv)
+plugins=(git mise)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,3 +106,5 @@ autoload -Uz compinit
 compinit
 
 export PATH="$HOME/.local/bin:$PATH"
+
+command -v mise > /dev/null && eval "$(mise activate zsh)"

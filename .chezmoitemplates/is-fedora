@@ -1,0 +1,4 @@
+{{ if ne .chezmoi.osRelease.id "fedora"  }}
+echo "Target system is not fedora skipping package installation."
+exit 0
+{{ end }}

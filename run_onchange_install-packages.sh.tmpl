@@ -1,8 +1,0 @@
-#!/bin/bash
-echo "Installing packages for debian."
-{{   if eq .chezmoi.osRelease.id "debian" }}
-sudo apt update && sudo apt install -yq {{ .packages.all }}
-{{   else if eq .chezmoi.osRelease.id "fedora" }}
-echo "Installing packages for fedora"
-sudo dnf install -yq {{ .packages.all }}
-{{   end }}

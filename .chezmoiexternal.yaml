@@ -10,15 +10,10 @@
   type: git-repo
   url: https://github.com/romkatv/powerlevel10k
 
-.pyenv:
-  type: git-repo
-  url: https://github.com/pyenv/pyenv
-
-.nvm:
-  type: git-repo
-  url: https://github.com/nvm-sh/nvm
-
-.local:
+.fonts:
   type: archive
-  url: https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-  stripComponents: 1
+  url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip
+
+.docker/cli-plugins/docker-compose:
+  type: file
+  url: https://github.com/docker/compose/releases/download/v2.27.1/docker-compose-linux-x86_64

@@ -1,0 +1,4 @@
+#!/bin/bash
+{{ template "is-fedora" . }}
+# install-fedora-packages.sh hash: {{ include "scripts/install-fedora-packages.sh" | sha256sum }}
+bash scripts/install-fedora-packages.sh

@@ -2,11 +2,10 @@ packages:
   general:
     - mise
     - tmux
-    - ripgrep
-    - fd-find
-    - bat
+    - bat fd-find fzf zoxide ripgrep eza
     - zsh
     - neovim python3-neovim
+    - vim
     - git
     - just
     - jq yq

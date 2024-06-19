@@ -1,0 +1,4 @@
+{{ if ne (env "DEVCONTAINER") "" }}
+echo "Running in devcontainer. Exiting"
+exit 0
+{{ end }}

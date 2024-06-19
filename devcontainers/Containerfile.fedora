@@ -1,6 +1,7 @@
 FROM docker.io/library/fedora:40
 
-ENV DEVCONTAINER=true
+ARG DEVCONTAINER=true
+ENV DEVCONTAINER=${DEVCONTAINER}
 
 ARG workdir=/workspace
 ARG chezmoi_path=${workdir}/.local/share/chezmoi

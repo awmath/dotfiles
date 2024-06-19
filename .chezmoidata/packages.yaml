@@ -16,5 +16,5 @@ packages:
     - rust
     - zsh-completions
   workstation:
-    - alacritty
+    - kitty
     - google-chrome-stable

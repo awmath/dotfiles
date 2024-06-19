@@ -3,4 +3,4 @@
 {{ template "is-workstation" . }}
 sudo dnf install -yq fedora-workstation-repositories
 sudo dnf config-manager --set-enabled google-chrome
-sudo dnf install -yq {{ .packages.workstation }}
+sudo dnf install -yq {{ range .packages.workstation }}{{.}} {{end}}

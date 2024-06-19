@@ -3,4 +3,5 @@
 sudo dnf config-manager --add-repo https://mise.jdx.dev/rpm/mise.repo
 sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/shells:zsh-users:zsh-completions/Fedora_Rawhide/shells:zsh-users:zsh-completions.repo
 sudo dnf copr enable -yq agriffis/neovim-nightly
-sudo dnf install -yq {{ .packages.general }}
+sudo dnf update -y
+echo sudo dnf install -yq {{ range .packages.general }}{{ . }} {{ end }}

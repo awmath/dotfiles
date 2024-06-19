@@ -1,10 +1,22 @@
 packages:
+  repo:
+    - pkg: mise
+      repo: https://mise.jdx.dev/rpm/mise.repo
+    - pkg: zsh-completions
+      repo: https://download.opensuse.org/repositories/shells:zsh-users:zsh-completions/Fedora_Rawhide/shells:zsh-users:zsh-completions.repo
+  copr:
+    - pkg: neovim python3-neovim
+      copr: agriffis/neovim-nightly
+    # add fzf copr for zsh integration (>0.48)
+    - pkg: fzf
+      copr: cyqsimon/fzf
+    - pkg: bottom
+      copr: atim/bottom
   general:
-    - mise
     - tmux
-    - bat fd-find fzf zoxide ripgrep eza
+    # improved terminal utils
+    - bat fd-find zoxide ripgrep eza tealdeer
     - zsh
-    - neovim python3-neovim
     - vim
     - git
     - just
@@ -14,7 +26,6 @@ packages:
     - nodejs
     - golang
     - rust
-    - zsh-completions
   workstation:
     - kitty
     - google-chrome-stable

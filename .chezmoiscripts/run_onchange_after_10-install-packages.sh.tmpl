@@ -1,9 +1,10 @@
 #!/bin/bash
 {{ template "is-fedora" . }}
-sudo dnf config-manager --add-repo https://mise.jdx.dev/rpm/mise.repo
-sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/shells:zsh-users:zsh-completions/Fedora_Rawhide/shells:zsh-users:zsh-completions.repo
-sudo dnf copr enable -yq agriffis/neovim-nightly
-# add fzf copr for zsh integration (>0.48)
-sudo dnf copr enable -yq cyqsimon/fzf
+{{ range .packages.repo }}
+sudo dnf config-manager --add-repo {{ .repo }}
+{{end}}
+{{ range .packages.copr }}
+sudo dnf copr enable -yq {{ .copr }}
+{{ end }}
 sudo dnf update -y
-sudo dnf install -yq {{ range .packages.general }}{{ . }} {{ end }}
+sudo dnf install -yq {{ range .packages.general }}{{ . }} {{ end }}{{ range concat .packages.repo .packages.copr }}{{ .pkg }} {{ end }}

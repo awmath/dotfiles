@@ -1,16 +1,20 @@
 FROM docker.io/library/fedora:40
 
+ENV DEVCONTAINER=true
+
 ARG workdir=/workspace
 ARG chezmoi_path=${workdir}/.local/share/chezmoi
+
+COPY devcontainers/distrobox-packages /tmp/
+
+# hadolint ignore=SC2046,DL3041
+RUN dnf install -y \
+  $(cat /tmp/distrobox-packages) \
+  && dnf clean all
 
 COPY . ${chezmoi_path}
 
 WORKDIR ${workdir}
-
-# hadolint ignore=SC2046,DL3041
-RUN dnf install -y \
-  $(cat ${chezmoi_path}/devcontainers/distrobox-packages) \
-  && dnf clean all
 
 RUN sh -c "$(curl -fsLS get.chezmoi.io)" -- \
   -b /usr/local/bin \

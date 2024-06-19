@@ -65,12 +65,17 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# add autocompletion loading
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit
+compinit
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git mise)
+plugins=(git mise fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,10 +105,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# add autocompletion loading
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit
-compinit
 
 export PATH="$HOME/.local/bin:$PATH"
 

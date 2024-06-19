@@ -13,7 +13,7 @@ packages:
     - pkg: bottom
       copr: atim/bottom
   general:
-    - tmux
+    - tmux xclip
     # improved terminal utils
     - bat fd-find zoxide ripgrep eza tealdeer
     - zsh

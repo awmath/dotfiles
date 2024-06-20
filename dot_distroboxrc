@@ -1,5 +1,4 @@
-container_image_default="ghcr.io/awmath/devcontainer:latest"
+container_image_default="ghcr.io/awmath/devcontainer:fedora"
 container_name_default="devcontainer"
-container_init_hooks="ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/podman"
-container_user_custom_home="/workspace"
+container_init_hook="ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/podman"
 

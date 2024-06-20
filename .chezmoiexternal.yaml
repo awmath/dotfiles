@@ -21,3 +21,7 @@
 .docker/cli-plugins/docker-compose:
   type: file
   url: https://github.com/docker/compose/releases/download/v2.27.1/docker-compose-linux-x86_64
+
+.tmux/plugins/catpuccin:
+  type: git-repo
+  url: https://github.com/catppuccin/tmux

@@ -3,5 +3,5 @@ set -e
 
 # initialize basic neovim config
 echo "Initializing NeoVim"
-XDG_CONFIG_HOME={{ .chezmoi.homeDir }} nvim --headless +"Lazy sync" +"qall" nvim --headless +"Lazy sync" +"qall"
+nvim --headless +"Lazy sync" +"qall"
 echo "NeoVim setup complete."

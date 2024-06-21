@@ -4,22 +4,20 @@ ARG DEVCONTAINER=true
 ENV DEVCONTAINER=${DEVCONTAINER}
 
 ARG workdir=/workspace
-ARG chezmoi_path=${workdir}/.local/share/chezmoi
 
-COPY devcontainers/distrobox-packages /tmp/
+ARG home=/home/dev
+RUN adduser dev -d ${home} && \
+  mkdir -p ${workdir} && chown -R dev:dev ${workdir} && \
+  echo "dev ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-# hadolint ignore=SC2046,DL3041
-RUN dnf install -y \
-  $(cat /tmp/distrobox-packages) \
-  && dnf clean all
+USER dev
 
-COPY . ${chezmoi_path}
+RUN sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin"
+ARG chezmoi_path="${home}/.local/share/chezmoi/" 
+COPY --chown=dev:dev . ${chezmoi_path}
 
 WORKDIR ${workdir}
 
-RUN sh -c "$(curl -fsLS get.chezmoi.io)" -- \
-  -b /usr/local/bin \
-  apply \
-  --destination ${workdir} \
-  --source ${chezmoi_path} && \
-  dnf clean all
+COPY devcontainers/entrypoint.sh /
+ENTRYPOINT [ "/entrypoint.sh" ]
+CMD [ "zsh" ]

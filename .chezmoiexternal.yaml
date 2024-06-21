@@ -26,3 +26,7 @@
 .tmux/plugins/catpuccin:
   type: git-repo
   url: https://github.com/catppuccin/tmux
+
+.tmux/plugins/resurrect:
+  type: git-repo
+  url: https://github.com/tmux-plugins/tmux-resurrect

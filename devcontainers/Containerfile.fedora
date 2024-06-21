@@ -3,6 +3,8 @@ FROM docker.io/library/fedora:40
 ARG DEVCONTAINER=true
 ENV DEVCONTAINER=${DEVCONTAINER}
 
+ENV COLORTERM=truecolor
+
 ARG workdir=/workspace
 
 ARG home=/home/dev

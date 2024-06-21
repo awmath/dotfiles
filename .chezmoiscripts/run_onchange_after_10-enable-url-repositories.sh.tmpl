@@ -1,6 +1,5 @@
 #!/bin/bash
 {{ template "is-fedora" . }}
 {{ range .packages.repo }}
-sudo dnf config-manager --add-repo {{ .repo }}
+{{ template "enable-repo" . }}
 {{end}}
-sudo dnf update -y

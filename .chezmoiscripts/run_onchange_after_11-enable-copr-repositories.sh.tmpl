@@ -1,6 +1,5 @@
 #!/bin/bash
 {{ template "is-fedora" . }}
 {{ range .packages.copr }}
-sudo dnf copr enable -yq {{ .copr }}
+{{ template "enable-copr" . }}
 {{ end }}
-sudo dnf update -y

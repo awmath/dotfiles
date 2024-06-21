@@ -1,0 +1,1 @@
+{{ range .packages.general }}{{ . }} {{ end }}{{ range concat .packages.repo .packages.copr }}{{ .pkg }} {{ end -}}

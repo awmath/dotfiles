@@ -1,4 +1,0 @@
-container_image_default="docker.io/library/fedora:40"
-container_name_default="devcontainer"
-container_init_hook="ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/podman"
-

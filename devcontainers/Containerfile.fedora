@@ -10,7 +10,10 @@ ARG workdir=/workspace
 ARG home=/home/dev
 RUN adduser dev -d ${home} && \
   mkdir -p ${workdir} && chown -R dev:dev ${workdir} && \
-  echo "dev ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+  echo "dev ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers; \
+  echo dev:10000:5000 > /etc/subuid; \
+  echo dev:10000:5000 > /etc/subgid; \
+  rpm --restore shadow-utils
 
 USER dev
 

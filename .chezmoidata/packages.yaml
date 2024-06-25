@@ -19,7 +19,7 @@ packages:
     - zsh
     - vim
     - git
-    - just
+    - just direnv
     - jq yq
     - curl wget rsync
     - python pipx

@@ -26,7 +26,6 @@ packages:
     - nodejs
     - golang
     - rust
-    - podman podman-docker
   workstation:
     - kitty
     - google-chrome-stable

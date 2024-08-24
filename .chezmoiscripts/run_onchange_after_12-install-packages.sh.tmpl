@@ -1,4 +1,0 @@
-#!/bin/bash
-{{ template "is-fedora" . }}
-sudo dnf update -y
-sudo dnf install -yq {{ template "parse-packages" . }}

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ -e /home/linuxbrew/.linuxbrew/bin/brew ]
+then
+    echo "Homebrew is already intalled"
+    exit 0
+fi
+
+{{ if eq .chezmoi.osRelease.id "fedora" }}
+sudo dnf groupinstall -y 'Development Tools'
+sudo dnf install -y procps-ng curl file git bash
+{{ else if eq .chezmoi.osRelease.id "arch" }}
+yes | sudo pacman -Sy base-devel procps-ng curl file git bash
+{{ else if eq .chezmoi.osRelease.id "debian" "ubuntu" }}
+sudo apt-get update -y
+sudo apt-get install -y build-essential procps curl file git bash
+{{ end }}
+
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

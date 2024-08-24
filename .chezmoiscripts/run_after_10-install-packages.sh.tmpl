@@ -1,0 +1,5 @@
+#!/bin/bash
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+brew bundle --file={{ .chezmoi.config.destDir }}/.brewfile
+brew bundle --force cleanup --file={{ .chezmoi.config.destDir }}/.brewfile

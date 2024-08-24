@@ -1,0 +1,32 @@
+# daily drivers
+brew "zsh"
+brew "zsh-completions"
+brew "tmux"
+brew "neovim"
+brew "vim"
+
+# development stuff
+brew "gcc"
+brew "git"
+brew "mise", args: ['HEAD']
+
+# utils
+brew "jq"
+brew "yq"
+brew "curl"
+brew "wget"
+brew "rsync"
+
+# replacements for cat, grep, ls, cd, find
+brew "ripgrep"
+brew "eza"
+brew "zoxide"
+brew "fd"
+brew "bat"
+
+# fzf needs the zsh shellenv 
+brew "fzf", args: ['HEAD']
+
+# misc
+brew "tealdeer"
+brew "bottom"

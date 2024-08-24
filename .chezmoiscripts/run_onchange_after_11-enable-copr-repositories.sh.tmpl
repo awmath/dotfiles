@@ -1,5 +1,0 @@
-#!/bin/bash
-{{ template "is-fedora" . }}
-{{ range .packages.copr }}
-{{ template "enable-copr" . }}
-{{ end }}

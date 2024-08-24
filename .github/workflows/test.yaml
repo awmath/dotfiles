@@ -1,0 +1,30 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+      - homebrew
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        image: 
+          - {name: "ubuntu", base: "ubuntu:latest", deps: "apt update -y; apt install -y sudo curl"}
+          - {name: "debian", base: "debian:latest", deps: "apt update -y; apt install -y sudo curl"}
+          - {name: "fedora", base: "fedora:latest", deps: "dnf install -y sudo curl"}
+          - {name: "arch", base: "archlinux:latest", deps: "yes | pacman -Sy sudo curl"}
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ matrix.image.base }}
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: sh -c "${{ matrix.image.deps }}"
+      - name: Run chezmoi
+        run: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply -D /tmp -S /workspaces/dotfiles
+      - name: Check brew
+        run: zsh -c "brew bundle --file ~/.brewfile"

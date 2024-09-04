@@ -12,6 +12,8 @@ packages:
       copr: cyqsimon/fzf
     - pkg: bottom
       copr: atim/bottom
+    - pkg: lazygit
+      copr: atim/lazygit
   general:
     - tmux xclip
     # improved terminal utils

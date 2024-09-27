@@ -18,6 +18,7 @@ packages:
     - tmux xclip
     # improved terminal utils
     - bat fd-find zoxide ripgrep eza tealdeer
+    - parallel
     - zsh
     - vim
     - git

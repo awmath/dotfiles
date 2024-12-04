@@ -4,7 +4,13 @@ return {
     opts = {
       servers = {
         pyright = {
-          -- somehow only keep typs hints...
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = "off",
+              },
+            },
+          },
         },
       },
     },
